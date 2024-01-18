@@ -32,15 +32,7 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="consoles/asd" />
-      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="schemas/freelec_springboot3_webservice/tables/user" />
-      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="schemas/freelec_springboot3_webservice/tables/member" />
-      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="consoles/Connection" />
-      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="schemas/freelec_springboot3_webservice/tables/SPRING_SESSION_ATTRIBUTES" />
-      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="schemas/freelec_springboot3_webservice/tables/order_item" />
-      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="schemas/freelec_springboot3_webservice/tables/SPRING_SESSION" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.orders" active-filter-id="">

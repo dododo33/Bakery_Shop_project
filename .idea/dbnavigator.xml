@@ -13,30 +13,16 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="78d8b976-6966-4f02-bf36-566904765eaa">
-      <console name="asd" type="STANDARD" schema="freelec_springboot3_webservice" session="Main"><![CDATA[use freelec_springboot3_webservice
-
-CREATE TABLE SPRING_SESSION (
-	PRIMARY_ID CHAR(36) NOT NULL,
-	SESSION_ID CHAR(36) NOT NULL,
-	CREATION_TIME BIGINT NOT NULL,
-	LAST_ACCESS_TIME BIGINT NOT NULL,
-	MAX_INACTIVE_INTERVAL INT NOT NULL,
-	EXPIRY_TIME BIGINT NOT NULL,
-	PRINCIPAL_NAME VARCHAR(100),
-	CONSTRAINT SPRING_SESSION_PK PRIMARY KEY (PRIMARY_ID)
-) ENGINE=InnoDB ROW_FORMAT=DYNAMIC;
-
-CREATE UNIQUE INDEX SPRING_SESSION_IX1 ON SPRING_SESSION (SESSION_ID);
-CREATE INDEX SPRING_SESSION_IX2 ON SPRING_SESSION (EXPIRY_TIME);
-CREATE INDEX SPRING_SESSION_IX3 ON SPRING_SESSION (PRINCIPAL_NAME);
-
-CREATE TABLE SPRING_SESSION_ATTRIBUTES (
-	SESSION_PRIMARY_ID CHAR(36) NOT NULL,
-	ATTRIBUTE_NAME VARCHAR(200) NOT NULL,
-	ATTRIBUTE_BYTES BLOB NOT NULL,
-	CONSTRAINT SPRING_SESSION_ATTRIBUTES_PK PRIMARY KEY (SESSION_PRIMARY_ID, ATTRIBUTE_NAME),
-	CONSTRAINT SPRING_SESSION_ATTRIBUTES_FK FOREIGN KEY (SESSION_PRIMARY_ID) REFERENCES SPRING_SESSION(PRIMARY_ID) ON DELETE CASCADE
-) ENGINE=InnoDB ROW_FORMAT=DYNAMIC;]]></console>
+      <console name="asd" type="STANDARD" schema="freelec_springboot3_webservice" session="Main"><![CDATA[create table user (
+    id bigint not null auto_increment,
+    created_date datetime(6),
+    modified_date datetime(6),
+    email varchar(255) not null,
+    name varchar(255) not null,
+    picture varchar(255),
+    role varchar(255) not null, primary key (id)
+                  ) engine=InnoDB]]></console>
+      <console name="Connection" type="STANDARD" schema="" session="Main" />
     </connection>
     <connection id="739b5887-f6b6-4282-b95e-420bbec161af">
       <console name="Connection 1" type="STANDARD" schema="" session="Main" />
@@ -46,7 +32,15 @@ CREATE TABLE SPRING_SESSION_ATTRIBUTES (
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="consoles/asd" />
+      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="schemas/freelec_springboot3_webservice/tables/user" />
+      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="schemas/freelec_springboot3_webservice/tables/member" />
+      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="consoles/Connection" />
+      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="schemas/freelec_springboot3_webservice/tables/SPRING_SESSION_ATTRIBUTES" />
+      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="schemas/freelec_springboot3_webservice/tables/order_item" />
+      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="schemas/freelec_springboot3_webservice/tables/SPRING_SESSION" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.orders" active-filter-id="">
@@ -55,13 +49,17 @@ CREATE TABLE SPRING_SESSION_ATTRIBUTES (
       </filter>
     </filter-actions>
     <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="mysql.gtid_executed" active-filter-id="" />
-    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.user" active-filter-id="" />
+    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.user" active-filter-id="">
+      <filter id="0e123a56-0f56-402b-aeb1-ec653b337577" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
     <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.cart" active-filter-id="">
       <filter id="954719e5-1ec9-4177-85ed-b6506530f363" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="cart_id" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
-    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.SPRING_SESSION_ATTRIBUTES" active-filter-id="">
+    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.SPRING_SESSION_ATTRIBUTES" active-filter-id="EMPTY_FILTER">
       <filter id="36ccf4d6-6f2b-4a1f-8feb-93ee67688295" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="ATTRIBUTE_NAME" operator="=" value="" active="true" />
       </filter>
@@ -76,12 +74,12 @@ CREATE TABLE SPRING_SESSION_ATTRIBUTES (
         <condition column="next_val" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
-    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.order_item" active-filter-id="">
+    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.order_item" active-filter-id="EMPTY_FILTER">
       <filter id="2e4e751d-585b-4033-8fa5-055ff8d0e4a6" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="order_item_id" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
-    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.SPRING_SESSION" active-filter-id="ae756acf-3d69-4431-89ba-ff17957e3aa6">
+    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.SPRING_SESSION" active-filter-id="">
       <filter id="ae756acf-3d69-4431-89ba-ff17957e3aa6" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="PRIMARY_ID" operator="=" value="" active="true" />
       </filter>
@@ -91,7 +89,7 @@ CREATE TABLE SPRING_SESSION_ATTRIBUTES (
         <condition column="cart_item_id" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
-    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.member" active-filter-id="7cc69a20-41f9-4674-beb4-690e5b63bdbf">
+    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.member" active-filter-id="">
       <filter id="7cc69a20-41f9-4674-beb4-690e5b63bdbf" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="member_id" operator="=" value="" active="true" />
       </filter>

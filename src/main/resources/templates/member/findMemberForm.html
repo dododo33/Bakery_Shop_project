@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout2}">
+
+<!-- 사용자 CSS 추가 -->
+<th:block layout:fragment="css">
+  <style>
+    .error {
+      color: #bd2130;
+    }
+    .title {
+      top: 50%;
+      left: 50%;
+      text-align:center;
+    }
+    .login-form{
+      /* border: 3px solid red; */
+      border-radius: 5px;
+      height: 350px;
+      width: 600px;
+      background-color: #eeeff1;
+      padding: 50px;
+      margin : 80px auto;
+    }
+    .button_container {
+      position: sticky;
+      left: 0;
+      right: 0;
+      top: 60%;
+    }
+    .button {
+      border: none;
+      display: block;
+      text-align: center;
+      cursor: pointer;
+      text-transform: uppercase;
+      outline: none;
+      overflow: hidden;
+      position: relative;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      background-color: #222;
+      padding: 17px 60px;
+      margin: 0 auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+    }
+    .button span {
+      position: relative;
+      z-index: 1;
+    }
+    .button:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 490%;
+      width: 140%;
+      background: #78c7d2;
+      -webkit-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+      -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+      transform: translateX(-98%) translateY(-25%) rotate(45deg);
+    }
+    .button:hover:after {
+      -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+      transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    }
+    .span {
+      margin-top: 70px;
+    }
+    .forget {
+      position: absolute;
+      left: 50%;
+      top: 107%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .link {
+      font-size: 20px;
+      margin-top: 30px;
+    }
+    .link a {
+      color: #000;
+      font-size: 25px;
+    }
+  </style>
+</th:block>
+
+<!-- 사용자 스크립트 추가 -->
+<th:block layout:fragment="script">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).on('click', '#checkEmail', function() {
+      const email = $("#email").val();
+
+      if (email == "" || email == null || email == undefined) {
+        alert("이메일을 입력해 주세요!")
+        return false;
+      }
+      const sendEmail = document.forms["sendEmail"];
+      $.ajax({
+        url : "/members/findId",
+        type : "post",
+        data : { 'memberEmail': email },
+        dataType : "text",
+        success : function(result) {
+          console.log(result)
+          if (result === 'null') {
+            alert('가입되지 않은 이메일입니다!');
+          } else {
+            alert('임시비밀번호를 전송 했습니다.');
+            sendEmail.submit();
+          }
+        },
+        error : function(xhr) {
+          alert("에러코드 = " + xhr.status);
+        }
+      });
+    });
+  </script>
+</th:block>
+
+<div id="container" layout:fragment="content">
+  <body>
+  <form role="form" class="text-start" method="post" name="sendEmail" action="/members/sendEmail">
+    <br></br>
+    <h1 class="title" style="margin-top:40px">비밀번호 찾기</h1>
+    <div class="login-form">
+      <div class="form-group">
+        <input type="email" id="email" name="memberEmail" class="form-control" placeholder="회원가입시 입력했던 이메일을 입력하세요." style="width:400px; margin-left:50px; margin-top:40px;" required>
+        <p style="margin-left:80px; margin-top:20px;">입력한 이메일로 임시 비밀번호가 전송됩니다!</p>
+      </div>
+      <p th:if="${loginErrorMsg}" class="error" th:text="${loginErrorMsg}"></p>
+      <div class="button_container">
+        <button type="button" id="checkEmail" class="button" style="margin-top:20px">&nbsp;&nbsp;비밀번호 발송&nbsp;&nbsp;</button>
+        <br>
+      </div>
+      <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    </div>
+  </form>
+  </body>
+</div>
+
+</html>

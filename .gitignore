@@ -16,6 +16,8 @@ target/
 ### IntelliJ IDEA ###
 .idea
 application.properties
+application-oauth-properties
+application-real-db-properties
 *.iws
 *.iml
 *.ipr

@@ -20,7 +20,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-@RequiredArgsConstructor
 @Configuration
 @EnableWebSecurity
 @AllArgsConstructor
@@ -33,11 +32,7 @@ public class SecurityConfig {
     private PrincipalOauth2UserService principalOauth2UserService;
 
     /* AuthenticationManager Bean 등록 */
-    @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
-            throws Exception {
-        return authenticationConfiguration.getAuthenticationManager();
-    }
+    
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {

@@ -32,7 +32,10 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="schemas/freelec_springboot3_webservice/tables/user" />
+      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="schemas/freelec_springboot3_webservice/tables/member" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.orders" active-filter-id="">
@@ -41,7 +44,7 @@
       </filter>
     </filter-actions>
     <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="mysql.gtid_executed" active-filter-id="" />
-    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.user" active-filter-id="">
+    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.user" active-filter-id="EMPTY_FILTER">
       <filter id="0e123a56-0f56-402b-aeb1-ec653b337577" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="id" operator="=" value="" active="true" />
       </filter>
@@ -81,7 +84,7 @@
         <condition column="cart_item_id" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
-    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.member" active-filter-id="">
+    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.member" active-filter-id="EMPTY_FILTER">
       <filter id="7cc69a20-41f9-4674-beb4-690e5b63bdbf" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="member_id" operator="=" value="" active="true" />
       </filter>

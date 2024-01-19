@@ -13,10 +13,6 @@ com\shop\entity\BaseTimeEntity.class
 com\shop\entity\QCartItem.class
 com\shop\entity\QBaseEntity.class
 com\shop\repository\ItemRepositoryCustom.class
-<<<<<<< HEAD
-com\shop\SonginhaApplication.class
-com\shop\dto\ItemSearchDto.class
-=======
 com\shop\entity\Member$MemberBuilder.class
 com\shop\repository\ItemImgRepository.class
 com\shop\service\OrderService.class
@@ -74,4 +70,3 @@ com\shop\repository\CartItemRepository.class
 com\shop\dto\ItemSearchDto.class
 com\shop\config\PasswordEncoderConfig.class
 com\shop\entity\QCart.class
->>>>>>> b384a9c77a7afe54dd3a91002e60fdd7f7dd71f4

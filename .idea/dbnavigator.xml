@@ -56,12 +56,12 @@
         <condition column="ATTRIBUTE_NAME" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
-    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.item_img" active-filter-id="">
+    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.item_img" active-filter-id="EMPTY_FILTER">
       <filter id="2d1a69af-830c-4d02-8c9c-a94a54ff90f8" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="item_img_id" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
-    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.hibernate_sequence" active-filter-id="">
+    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.hibernate_sequence" active-filter-id="EMPTY_FILTER">
       <filter id="0605b73e-36de-4914-a61c-25ea1cfadae2" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="next_val" operator="=" value="" active="true" />
       </filter>
@@ -71,7 +71,7 @@
         <condition column="order_item_id" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
-    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.SPRING_SESSION" active-filter-id="">
+    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.SPRING_SESSION" active-filter-id="EMPTY_FILTER">
       <filter id="ae756acf-3d69-4431-89ba-ff17957e3aa6" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="PRIMARY_ID" operator="=" value="" active="true" />
       </filter>

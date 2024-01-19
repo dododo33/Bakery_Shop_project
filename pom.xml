@@ -6,7 +6,9 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.5.2</version>
+
 		<relativePath/> <!-- lookup parent from repository -->
+
 	</parent>
 	<groupId>com.shop</groupId>
 	<artifactId>shop</artifactId>
@@ -173,7 +175,6 @@
 					</excludes>
 				</configuration>
 			</plugin>
-
 
 
 			<plugin>

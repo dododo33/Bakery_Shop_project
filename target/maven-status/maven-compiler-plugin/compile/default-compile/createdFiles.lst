@@ -1,3 +1,4 @@
+com\shop\entity\QUser.class
 com\shop\repository\ItemRepositoryCustom.class
-com\shop\dto\ItemSearchDto.class
 com\shop\SonginhaApplication.class
+com\shop\dto\ItemSearchDto.class

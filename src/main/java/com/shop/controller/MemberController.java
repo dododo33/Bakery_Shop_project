@@ -205,7 +205,7 @@ public class MemberController {
         model.addAttribute("member", memberUpdateDto);
         memberService.updateMember(memberUpdateDto);
 
-        return "redirect:/members/myInfo";
+        return "redirect:members/myInfo";
     }
 
 

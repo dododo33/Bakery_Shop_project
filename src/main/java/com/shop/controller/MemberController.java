@@ -125,7 +125,7 @@ public class MemberController {
 
     @GetMapping(value = "/findMember")
     public String findMember(Model model) {
-        return "/member/findMemberForm";
+        return "member/findMemberForm";
     }
 
     @Transactional
@@ -134,7 +134,7 @@ public class MemberController {
         MailDto dto = mailService.createMailAndChangePassword(memberEmail);
         mailService.mailSend(dto);
 
-        return "/member/memberLoginForm";
+        return "member/memberLoginForm";
     }
 
     @RequestMapping(value = "/findId", method = RequestMethod.POST)

@@ -64,14 +64,14 @@ public class ItemRepositoryCustomImpl implements ItemRepositoryCustom{
 
     private BooleanExpression searchByCategory(String searchItemCategory, String searchQuery){
 
-        if(StringUtils.equals("[의류]", searchItemCategory)){
-            return QItem.item.itemCategory.like("[의류]" + searchQuery);
-        } else if(StringUtils.equals("[강아지 용품]", searchItemCategory)){
-            return QItem.item.itemCategory.like("[강아지 용품]" + searchQuery);
-        } else if(StringUtils.equals("[장난감]", searchItemCategory)) {
-            return QItem.item.itemCategory.like("[장난감]" + searchQuery);
-        } else if(StringUtils.equals("[사료(껌)]", searchItemCategory)) {
-            return QItem.item.itemCategory.like("[사료(껌)]" + searchQuery);
+        if(StringUtils.equals("[빵]", searchItemCategory)){
+            return QItem.item.itemCategory.like("[빵]" + searchQuery);
+        } else if(StringUtils.equals("[전통과자]", searchItemCategory)){
+            return QItem.item.itemCategory.like("[전통과자]" + searchQuery);
+        } else if(StringUtils.equals("[케이크]", searchItemCategory)) {
+            return QItem.item.itemCategory.like("[케이크]" + searchQuery);
+        } else if(StringUtils.equals("[롤 ● 파운드]", searchItemCategory)) {
+            return QItem.item.itemCategory.like("[롤 ● 파운드]" + searchQuery);
         } else if(StringUtils.equals("[기타]", searchItemCategory)) {
             return QItem.item.itemCategory.like("[기타]" + searchQuery);
         }

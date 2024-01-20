@@ -29,10 +29,18 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
-    <last-used-providers />
+    <last-used-providers>
+      <object-type object-type="TABLE" editor-provider="DATA" />
+    </last-used-providers>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="schemas/freelec_springboot3_webservice/tables/member" />
+      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="schemas/freelec_springboot3_webservice/tables/item_img" />
+      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="schemas/freelec_springboot3_webservice/tables/item" />
+      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="schemas/freelec_springboot3_webservice/tables/member" />
+      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="schemas/freelec_springboot3_webservice/tables/order_item" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.orders" active-filter-id="">
@@ -87,7 +95,7 @@
       </filter>
     </filter-actions>
     <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.posts" active-filter-id="" />
-    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.item" active-filter-id="">
+    <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.item" active-filter-id="EMPTY_FILTER">
       <filter id="ec7c303f-bb69-4ad0-befb-733c0a819fde" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="item_id" operator="=" value="" active="true" />
       </filter>

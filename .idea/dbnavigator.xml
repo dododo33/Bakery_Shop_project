@@ -21,7 +21,9 @@
     name varchar(255) not null,
     picture varchar(255),
     role varchar(255) not null, primary key (id)
-                  ) engine=InnoDB]]></console>
+                  ) engine=InnoDB
+
+DELETE FROM item WHERE item_id = 5;]]></console>
       <console name="Connection" type="STANDARD" schema="" session="Main" />
     </connection>
     <connection id="739b5887-f6b6-4282-b95e-420bbec161af">

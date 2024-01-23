@@ -52,6 +52,14 @@ $ Bakery Shop project [베이커리 쇼핑몰]
 - RestFur API를 설계하고 구현하는 경험
 - 사용자 인증 및 권한 부여를 구현하고 애플리케이션의 보안 측면을 고려하는 경험
 
+## AWS로 내 프로젝트 호스팅
+
+- 로컬이 아닌 내 프로젝트를 AWS 활용하여 호스팅 중이다
+
+
+
+
+
 ### 소셜 로그인 (google)
 - Spring Security
 - OAuth2 인증 방식 사용

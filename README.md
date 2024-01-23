@@ -52,6 +52,22 @@ $ Bakery Shop project [베이커리 쇼핑몰]
 - RestFur API를 설계하고 구현하는 경험
 - 사용자 인증 및 권한 부여를 구현하고 애플리케이션의 보안 측면을 고려하는 경험
 
+### 소셜 로그인 (google)
+- Spring Security
+- OAuth2 인증 방식 사용
+
+`WebSecurityConfigurerAdapter` 가 Deprecated 됨에 따라 `SecurityFilterChain` 을 빈으로 등록하는 방식으로 변경  
+
+다음의 로직들로 구현함
+1. DefaultOAuth2UserService 를 상속해서 만든 커스텀 OAuth2UserService
+2. UserDetails 메서드에 실제 OAuth2User 구현
+3. 위의 내용들을 반영하는 SecurityConfig 설정
+4. MemberService 에서 loadUserByUsername 메서드를 구현하여 회원을 찾도록 함.
+5. MemberController 에서 UserDetail  
+    Form 로그인이면 UserDetails,
+    OAuth2 로그인이면 OAuth2User 타입으로 반환
+
+https://github.com/dododo33/Bakery_Shop_project/assets/101379925/ffeb6800-7347-4cb6-b116-24986fc8615b   
 
 ## ERD 
   

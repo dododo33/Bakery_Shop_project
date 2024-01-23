@@ -30,3 +30,8 @@ $ Bakery Shop project [베이커리 쇼핑몰]
 
 #### API
 - OAuth2.0 API, Java Mail
+
+#  📜프로젝트 구현기능
+
+-   **회원 (Member)**
+      -   회원가입 / 이메일 인증 / 임시비밀번호 전송 / 비밀번호 찾기 / 로그인 , 로그아웃 / 구글 로그인 / 유자(user), 관리자(Admin) / 

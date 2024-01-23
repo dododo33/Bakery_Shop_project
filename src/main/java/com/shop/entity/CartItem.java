@@ -20,9 +20,9 @@ public class CartItem extends BaseEntity{
     @JoinColumn(name = "cart_id")
     private Cart cart;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)  // 하나의 상품은 여러 장바구니의 상품으로 담길 수 있으므로 @ManyToOne
     @JoinColumn(name = "item_id")
-    private Item item;
+    private Item item;                  // 장바구니에 담을 상품의 정보를 알아야하므로 상품 엔티티 매핑
 
     private int count;
 

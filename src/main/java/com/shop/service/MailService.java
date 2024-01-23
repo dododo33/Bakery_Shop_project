@@ -51,6 +51,7 @@ public class MailService {
         return message;
     }
 
+    // 임시 비밀번호 생성
     public static String getTempPassword() {
         char[] charSet = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F',
                 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
@@ -66,6 +67,7 @@ public class MailService {
 
         }
 
+        // 메일 내용을 생성하고 임시 비밀번호로 회원 비밀번호를 변경
         public MailDto createMailAndChangePassword(String memberEmail) {
         String str = getTempPassword();
         MailDto dto = new MailDto();
@@ -91,6 +93,7 @@ public class MailService {
 
         }
 
+        // 임시 비밀번호 업데이트
     public boolean updatePassword(String str, String email){
         try {
             BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();

@@ -30,7 +30,8 @@ public class OrderController {
 
     @PostMapping(value = "/order")
     public @ResponseBody ResponseEntity order(@RequestBody @Valid OrderDto orderDto
-            , BindingResult bindingResult, Principal principal){
+            , BindingResult bindingResult, Principal principal){        // 스프링에서 비동기 처리할 때
+                                                                        // @RequestBody와 @ResponseBody 사용
 
         if(bindingResult.hasErrors()){
             StringBuilder sb = new StringBuilder();
@@ -43,9 +44,9 @@ public class OrderController {
             return new ResponseEntity<String>(sb.toString(), HttpStatus.BAD_REQUEST);
         }
 
-        String email = principal.getName();
+        String email = principal.getName();                 // 현재 로그인 유저 정보를 얻기 위해 @Controller
         Long orderId;
-
+                                                             // principal 객체에서 현재 로그인한 회원의 이메일 정보 조회
         try {
             orderId = orderService.order(orderDto, email);
         } catch(Exception e){

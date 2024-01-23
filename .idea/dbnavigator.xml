@@ -36,9 +36,7 @@ DELETE FROM item WHERE item_id = 5;]]></console>
     </last-used-providers>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="78d8b976-6966-4f02-bf36-566904765eaa" object-ref="schemas/freelec_springboot3_webservice/tables/member" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="78d8b976-6966-4f02-bf36-566904765eaa" dataset="freelec_springboot3_webservice.orders" active-filter-id="">

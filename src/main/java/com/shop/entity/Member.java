@@ -18,7 +18,7 @@ import java.util.Collection;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class Member extends BaseTimeEntity implements UserDetails{
+public class Member extends BaseTimeEntity implements UserDetails{      // 회원 정보 저장 엔티티
 
     @Id
     @Column(name="member_id")
@@ -27,7 +27,7 @@ public class Member extends BaseTimeEntity implements UserDetails{
 
     private String name;
 
-    @Column(unique = true)
+    @Column(unique = true)              // 회원은 이메일을 통해 유일하게 구분하므로 unique 속성 지정
     private String email;
 
     private String originalpassword;
@@ -41,8 +41,8 @@ public class Member extends BaseTimeEntity implements UserDetails{
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    private String provider;
-    private String providerId;
+    private String provider;    // oauth2를 이용한 경우 어떤 플랫폼을 이용하는지
+    private String providerId;  // oauth2를 이용할 경우 아이디값
 
 
 
@@ -53,9 +53,9 @@ public class Member extends BaseTimeEntity implements UserDetails{
         member.setEmail(memberFormDto.getEmail());
         member.setAddress(memberFormDto.getAddress());
         member.setPicture(member.getPicture());
-        String password = passwordEncoder.encode(memberFormDto.getPassword());
+        String password = passwordEncoder.encode(memberFormDto.getPassword()); // 스프링 시큐리티 설정 클래스에 등록한 BCryptPasswordEncoder Bean을 파라미터로 넘겨서 비밀번호 암호화
         member.setPassword(password);
-        member.setRole(Role.ADMIN);
+        member.setRole(Role.USER);
         return member;
     }
 

@@ -17,17 +17,17 @@ public class ItemImg extends BaseEntity{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String imgName;
+    private String imgName; //이미지 파일명
 
-    private String oriImgName;
+    private String oriImgName;  // 원본 이미지 파일명
 
-    private String imgUrl;
+    private String imgUrl;  // 이미지 조회 경로
 
-    private String repimgYn;
+    private String repimgYn;    // 대표 이미지 여부
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "item_id")
-    private Item item;
+    private Item item;              // 상품 엔티티와 다대일 단방향 매핑
 
     public void updateItemImg(String oriImgName, String imgName, String imgUrl) {
         this.oriImgName = oriImgName;

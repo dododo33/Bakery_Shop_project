@@ -20,8 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-@Transactional
-@RequiredArgsConstructor
+@Transactional                      // 로직을 처리하다가 에러가 발생하면 , 변경된 데이터를 로직을 수행하기 이전 상태로 콜백
+@RequiredArgsConstructor            // 빈을 주입하는 방법으로는 @Autowired 어노테이션을 이용하거나, 필드주입, 생성자주입 방법
 public class MemberService implements UserDetailsService {
 
     private final MemberRepository memberRepository;
@@ -36,7 +36,7 @@ public class MemberService implements UserDetailsService {
     private void validateDuplicateMember(Member member){
         Member findMember = memberRepository.findByEmail(member.getEmail());
         if(findMember != null){
-            throw new IllegalStateException("이미 가입된 회원입니다.");
+            throw new IllegalStateException("이미 가입된 회원입니다.");       // 이미 가입된 회원인 경우 예외 처리
         }
     }
     @Override
@@ -58,6 +58,7 @@ public class MemberService implements UserDetailsService {
 
 
 
+    // 비밀번호 일치 확인
     @ResponseBody
     public boolean checkPassword(Member member, String checkPassword) {
         Member findMember = memberRepository.findByEmail(member.getEmail());
@@ -71,7 +72,7 @@ public class MemberService implements UserDetailsService {
         return matches;
     }
 
-
+    // 회원정보 수정
     public Long updateMember(MemberUpdateDto memberUpdateDto) {
         Member member = memberRepository.findByEmail(memberUpdateDto.getEmail());
         member.updatePassword(memberUpdateDto.getPassword());
@@ -79,6 +80,7 @@ public class MemberService implements UserDetailsService {
         member.updateOriginalPassword(memberUpdateDto.getPassword());
         member.updateAddress(memberUpdateDto.getZipcode());
 
+        // 회원 비밀번호 수정을 위한 패스워드 암호화
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         String encodePw = encoder.encode(memberUpdateDto.getPassword());
         member.updatePassword(encodePw);

@@ -16,8 +16,8 @@ import javax.persistence.EntityNotFoundException;
 @Transactional
 public class ItemImgService {
 
-    @Value("${itemImgLocation}")
-    private String itemImgLocation;
+    @Value("${itemImgLocation}")        // @Value 어노테이션을 통해 application.properties 파일에 등록한 itemImgLocation 값을 불러와서
+    private String itemImgLocation;     // ItemImgLocation 변수에 넣어줌
 
     private final ItemImgRepository itemImgRepository;
 
@@ -32,7 +32,7 @@ public class ItemImgService {
         if (!StringUtils.isEmpty(oriImgName)) {
             imgName = fileService.uploadFile(itemImgLocation, oriImgName,
                     itemImgFile.getBytes());
-            imgUrl = "/images/item/" + imgName;
+            imgUrl = "/images/item/" + imgName;     // 저장한 상품 이미지를 불러올 경로를 설정
         }
 
         //상품 이미지 정보 저장

@@ -35,7 +35,7 @@ public class ItemController {
     @PostMapping(value = "/admin/item/new")
     public String itemNew(@Valid ItemFormDto itemFormDto, BindingResult bindingResult, Model model, @RequestParam("itemImgFile")List<MultipartFile> itemImgFileList) {
 
-        if(bindingResult.hasErrors()){
+        if(bindingResult.hasErrors()){      // 상품 등록 시 필수 값이 없다면 다시 상품 등록 페이지로 전환
             return "item/itemForm";
         }
 
@@ -47,8 +47,8 @@ public class ItemController {
 
         try {
 
-            itemService.saveItem(itemFormDto, itemImgFileList);
-        } catch (Exception e) {
+            itemService.saveItem(itemFormDto, itemImgFileList);     // 상품 저장 로직 호출. 매개 변수로 상품 정보와 상품 이미지 정보를 담고 있는
+        } catch (Exception e) {                                     // itemImgFileList를 넘겨줌.
             model.addAttribute("errorMessage", "상품 등록 중 에러가 발생하였습니다");
             return "item/itemForm";
         }
@@ -61,7 +61,7 @@ public class ItemController {
     public String itemDtl(@PathVariable("itemId") Long itemId, Model model) {
 
         try {
-            ItemFormDto itemFormDto = itemService.getItemDtl(itemId);
+            ItemFormDto itemFormDto = itemService.getItemDtl(itemId);        //조회한 상품 데이터를 모델에 담아 뷰로 전달
             model.addAttribute("itemFormDto", itemFormDto);
         } catch (EntityNotFoundException e) {
             model.addAttribute("errorMessage", "존재하지 않는 상품 입니다");

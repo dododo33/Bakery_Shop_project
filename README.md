@@ -97,11 +97,15 @@ https://github.com/dododo33/Bakery_Shop_project/assets/101379925/ffeb6800-7347-4
             ;
     ```
 
-(이메일 전송 인증
+(이메일 전송 인증)
 ![1](https://github.com/dododo33/Bakery_Shop_project/assets/101379925/3cdd5e49-59a2-4c0b-b3ea-75e1e4e597e4)
+
 ![2](https://github.com/dododo33/Bakery_Shop_project/assets/101379925/f5d99fbb-5e85-4c07-96fc-8ee6c6c69ec6)
+
 ![3](https://github.com/dododo33/Bakery_Shop_project/assets/101379925/b133926c-aa78-4ccd-8db8-b2b387f1dbad)
+
 ![4](https://github.com/dododo33/Bakery_Shop_project/assets/101379925/021d8402-5715-4f3b-8c67-3121383b0208)
+
 ![5](https://github.com/dododo33/Bakery_Shop_project/assets/101379925/fc58e5b1-4ada-4a31-8fc4-a0a703adf2e8)
 
 

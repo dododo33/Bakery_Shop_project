@@ -69,6 +69,37 @@ $ Bakery Shop project [베이커리 쇼핑몰]
 
 https://github.com/dododo33/Bakery_Shop_project/assets/101379925/ffeb6800-7347-4cb6-b116-24986fc8615b   
 
+### 회원가입 시 이메일 인증 기능 구현
+- spring-boot-starter-mail 라이브러리 사용
+- application.properties 에 구글 smtp 설정 추가
+- mail controller와 mail service 설계
+- 마주한 에러와 해결과정
+    - `401 error`  
+
+      : 다음과 같이 http.authorizeRequests()에 /mail/과 관련된 경로를 모두 permitAll() 해줌으로써 권한문제 해결
+    ```java
+    http.authorizeRequests()                        
+                    .mvcMatchers("/css/**", "/js/**", "/img/**").permitAll()   
+                    .mvcMatchers("/", "/members/**", "/item/**", "/images/**", "/mail/**").permitAll()
+    ```
+    
+    - `403 error` 에러 발생  
+    
+     : csrf를 disable 함으로써 문제 해결
+    ```java
+    http.authorizeRequests()                       
+                    .mvcMatchers("/css/**", "/js/**", "/img/**").permitAll()  
+                    .mvcMatchers("/", "/members/**", "/item/**", "/images/**", "/mail/**").permitAll()
+                    .mvcMatchers("/admin/**").hasRole("ADMIN")    
+                    .anyRequest().authenticated()
+                    .and()
+                    .csrf().ignoringAntMatchers("/mail/**") // csrf disable 설정 
+            ;
+    ```
+
+## 문제해결
+- 401 error
+     : csrf 예외처리 설정을 통해 해결    
 ## ERD 
   
 

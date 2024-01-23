@@ -44,6 +44,10 @@ $ Bakery Shop project [베이커리 쇼핑몰]
 
 -  **주문 (Order)**  
     - 상품 주문 / 주문 내역 조회 / 판매 목록(Admin) / 주문취소
+ 
+    - 
+## ERD 
+  ![ㅁㄴㅇ](https://github.com/dododo33/Bakery_Shop_project/assets/101379925/c683a5bf-355f-4b4f-ae5c-686e58fe364c)
 
 ## 핵심 키워드
 - 스프링부트, 스프링 시큐리티, JPA를 사용하여 웹 애플리케이션 기획
@@ -142,8 +146,8 @@ https://github.com/dododo33/Bakery_Shop_project/assets/101379925/ffeb6800-7347-4
 아직 앞으로 가야 할 길이 많이 남았지만, 더 많이 배우고 성장하기를 희망합니다. 이 프로젝트는 시작에 불과하며, 
 다양한 API를 추가하여 더 확장할 계획입니다. 
   
-## ERD 
-  
+
+
 
 
 

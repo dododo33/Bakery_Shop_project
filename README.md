@@ -56,6 +56,13 @@ $ Bakery Shop project [베이커리 쇼핑몰]
 
 - 로컬이 아닌 내 프로젝트를 AWS 활용하여 호스팅 중이다
 
+(로컬) 
+![로컬](https://github.com/dododo33/Bakery_Shop_project/assets/101379925/9e8f13d3-207d-4bf2-a79a-1f4654043421)
+
+(호스팅)
+![AWS](https://github.com/dododo33/Bakery_Shop_project/assets/101379925/786b2fbb-e853-43c2-8b53-d83eeccedeb1)
+
+
 
 
 
